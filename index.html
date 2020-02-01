@@ -1,0 +1,71 @@
+---
+layout: page
+---
+
+<div class="container">
+  <div class="row">
+    <div class="jumbotron col">
+      <h1 class="display-5">{{ site.title }}</h1>
+      <p class="lead">
+        This site is the homepage for FaiRank research group. We quantify and address unfairness of ranking in
+        online platforms.
+      </p>
+      <p class="lead">
+        Here, you will find links to our work, as well as open-source data and code from our research.
+      </p>
+    </div>
+  </div>
+
+  <h2 class="mb-4" id="publications">Publications</h2>
+  <div class="row">
+    <div class="col">
+      <ul>
+      {% for publication in site.publications %}
+        <li>
+          <a href="{{ publication.link }}" target="_blank">{{publication.text}}</a>
+          <br />
+          {% if publication.poster %}
+            <a class="badge badge-secondary" href="{{publication.poster}}" target="_blank">Poster</a>
+          {% endif %}
+          {% if publication.code %}
+          <a class="badge badge-dark" href="{{publication.code}}" target="_blank">Code</a>
+          {% endif %}
+          {% if publication.slides %}
+            <a class="badge badge-primary" href="{{publication.slides}}" target="_blank">Slides</a>
+          {% endif %}
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+  <hr />
+  <h2 class="mb-4" id="about">The Team</h2>
+  <div class="row">
+    {% for member in site.team %}
+      <div class="col-6 col-sm-4 col-md-3">
+        <div class="card mb-1 text-center" style="min-height: 300px; ">
+
+          <div style="height: 200px; background-image: url('{{member.picture}}'); background-position: center; background-size: cover;"></div>
+          <!-- <img src="{{member.picture}}" style="height: 150px; width: auto; display: block;" alt="Card image cap"> -->
+          <div class="card-body">
+            <h5 class="card-title">{{member.full_name}}</h5>
+          </div>
+          <div class="card-footer text-muted">
+            <a href="{{member.webpage}}" class="btn btn-primary">Webpage</a>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <hr />
+  <h3 class="mt-4">Contact Us</h3>
+  <div class="row">
+    <div class="col">
+      <p>
+        Have a question or comment? Feel free to send an email to
+        <a href="mailto:sihem.amer-yahia@univ-grenoble-alpes.fr">sihem.amer-yahia@univ-grenoble-alpes.fr</a> or
+        <a href="mailto:se58@aub.edu.lb">se58@aub.edu.lb</a>.
+      </p>
+    </div>
+  </div>
+</div>

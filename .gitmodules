@@ -1,0 +1,9 @@
+[submodule "docs/themes/vanilla-bootstrap-hugo-theme"]
+	path = docs/themes/vanilla-bootstrap-hugo-theme
+	url = https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme.git
+[submodule "docs/themes/book"]
+	path = docs/themes/book
+	url = https://github.com/alex-shpak/hugo-book
+[submodule "docs/themes/hugo-initio"]
+	path = docs/themes/hugo-initio
+	url = https://github.com/miguelsimoni/hugo-initio.git

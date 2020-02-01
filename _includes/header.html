@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" rel="author" href="{{ "/" | relative_url }}">{{ site.title | escape }}</a>
+
+    {%- assign page_paths = site.header_pages -%}
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        {%- for path in page_paths -%}
+          {%- assign my_page = site.pages | where: "path", path | first -%}
+          {%- if my_page.title -%}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+          </li>
+          {%- endif -%}
+        {% endfor -%}
+        {% for item in site.data.menu.pages %}
+          <li class="nav-item">
+            <a class="nav-link" href="{{ item.url }}">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+<div class="container pt-5">
+  <div class="row">
+    <div class="text-right col" >
+      <a href="https://aub.edu.lb" target="_blank">
+        <img src="{{ "/assets/img/aub.png" | relative_url }}" class="img-fluid logo" alt="AUB" style="height:80px; padding-right: 15px;">
+      </a>
+      <a href="https://cnrs.fr" target="_blank">
+        <img src="{{ "/assets/img/cnrs.png" | relative_url }}" class="img-fluid logo" alt="CNRS" style="height:80px; padding-right: 15px;">
+      </a>
+      <a href="https://www.univ-grenoble-alpes.fr" target="_blank">
+        <img src="{{ "/assets/img/uga.png" | relative_url }}" class="img-fluid logo" alt="UGA" style="height:80px; padding-right: 15px;">
+      </a>
+      <a href="https://www.liglab.fr/en" target="_blank">
+        <img src="{{ "/assets/img/lig.jpg" | relative_url }}" class="img-fluid logo" alt="LIG" style="height:80px; padding-right: 15px;">
+      </a>
+    </div>
+  </div>
+</div>

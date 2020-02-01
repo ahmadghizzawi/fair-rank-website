@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article>
+
+  <header>
+    <h1>{{ page.title | escape }}</h1>
+    {% if project.paper_url != blank %}
+      <a class="btn btn-primary" href="{{ project.paper_url }}" role="button">Read Paper</a>
+    {% endif %}
+  </header>
+
+  <section>
+    {{ content }}
+  </section>
+
+</article>
